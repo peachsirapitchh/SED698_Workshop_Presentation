@@ -25,7 +25,7 @@ def main():
     gas_list = {
     'Gasoline': 1,
     'Kerosene': 2,
-    'LGP': 3,
+    'LPG': 3,
     'Thinner': 4
     }
 
