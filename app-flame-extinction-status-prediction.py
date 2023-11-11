@@ -29,8 +29,8 @@ def main():
     'Thinner': 4
     }
     SIZE = st.slider('FLAME SIZE (cm)', min_value=0, max_value=20)
-    # FUEL = st.slider('FUEL USED', min_value=1, max_value=5)
-    selected_value = st.selectbox('FUEL USED', list(gas_list.keys()))
+    # FUEL = st.slider('FUEL CATEGORY', min_value=1, max_value=5)
+    selected_value = st.selectbox('FUEL CATEGORY', list(gas_list.keys()))
     DISTANCE = st.slider('DISTANCE SPREAD (cm)', min_value=0, max_value=250)
     DESIBEL = st.slider('DECIBEL VALUE (dB)', min_value=0, max_value=150)
     AIRFLOW = st.slider('LEVEL OF AIRFLOW (m/s)', min_value=0, max_value=50)
