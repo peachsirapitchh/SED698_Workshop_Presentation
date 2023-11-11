@@ -43,7 +43,12 @@ def main():
     if st.button('PREDICT'):
         diagnosis = flamestatus_prediction([SIZE, FUEL, DISTANCE, DESIBEL, AIRFLOW, FREQUENCY])
 
-    st.success(diagnosis)
+    #st.success(diagnosis)
+    if( diagnosis == 'FLAME IS EXTINCTED' )
+        st.success(diagnosis)
+    else 
+        st.danger(diagnosis)
+    
 
 if __name__=='__main__':
     main()
