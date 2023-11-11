@@ -44,7 +44,7 @@ def main():
         diagnosis = flamestatus_prediction([SIZE, FUEL, DISTANCE, DESIBEL, AIRFLOW, FREQUENCY])
 
     #st.success(diagnosis)
-    if( diagnosis == 'FLAME IS EXTINCTED' ):
+    if( diagnosis == 'STATUS: FLAME IS EXTINCTED' ):
         st.success(diagnosis)
     else:
         st.error(diagnosis)
