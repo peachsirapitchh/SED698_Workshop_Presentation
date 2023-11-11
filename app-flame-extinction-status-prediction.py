@@ -3,10 +3,10 @@ import pickle
 import streamlit as st
 
 # Loading the trained model
-loaded_model = pickle.load(open('fireextinction_trained.sav','rb'))
+loaded_model = pickle.load(open('fireextinction_trained.pkl','rb'))
 
 def flamestatus_prediction(input_data):
-    
+
     #changing the input data into numpy array
     id_np_array = np.asarray(input_data)
     id_reshaped = id_np_array.reshape(1,-1)
@@ -18,9 +18,9 @@ def flamestatus_prediction(input_data):
         return "STATUS: FLAME IS NOT EXTINCTED"
     else:
         return "STATUS: FLAME IS EXTINCTED"
-    
+
 def main():
-    
+
     st.title('FLAME STATUS PREDICTION')
     gas_list = {
     'Gasoline': 1,
@@ -28,8 +28,6 @@ def main():
     'LPG': 3,
     'Thinner': 4
     }
-
-
     SIZE = st.slider('FLAME SIZE (cm)', min_value=0, max_value=20)
     # FUEL = st.slider('FUEL USED', min_value=1, max_value=5)
     selected_value = st.selectbox('FUEL USED', list(gas_list.keys()))
@@ -41,12 +39,11 @@ def main():
         FUEL = gas_list[selected_value]
     # Prediction code
     diagnosis = ''
-    
+
     if st.button('PREDICT'):
         diagnosis = flamestatus_prediction([SIZE, FUEL, DISTANCE, DESIBEL, AIRFLOW, FREQUENCY])
-        
+
     st.success(diagnosis)
-    
+
 if __name__=='__main__':
     main()
- 
