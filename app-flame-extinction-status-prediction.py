@@ -47,7 +47,7 @@ def main():
     if( diagnosis == 'FLAME IS EXTINCTED' ):
         st.success(diagnosis)
     else:
-        st.danger(diagnosis)
+        st.error(diagnosis)
     
 
 if __name__=='__main__':
